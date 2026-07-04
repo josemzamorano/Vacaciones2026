@@ -1,18 +1,14 @@
 function actualizarContador() {
-    const contador =
-        document.getElementById('contador');
+    const contador = document.getElementById('contador');
 
     if (!contador) {
         return;
     }
 
-    const fechaViaje =
-        new Date('2026-07-27T00:00:00');
-
+    const fechaViaje = new Date('2026-07-26T00:00:00');
     const ahora = new Date();
 
-    const diferencia =
-        fechaViaje - ahora;
+    const diferencia = fechaViaje - ahora;
 
     if (diferencia <= 0) {
         contador.textContent =
@@ -21,8 +17,7 @@ function actualizarContador() {
     }
 
     const dias = Math.ceil(
-        diferencia /
-        (1000 * 60 * 60 * 24)
+        diferencia / (1000 * 60 * 60 * 24)
     );
 
     contador.textContent =
@@ -31,26 +26,22 @@ function actualizarContador() {
 
 actualizarContador();
 
-const musica =
-    document.getElementById('musica');
-
-const modal =
-    document.getElementById('bienvenida');
-
-const boton =
-    document.getElementById('btnComenzar');
+const musica = document.getElementById('musica');
+const modal = document.getElementById('bienvenida');
+const boton = document.getElementById('btnComenzar');
 
 
-// Ocultar el modal si ya empezó la aventura
+// Si ya se inició la aventura en esta pestaña,
+// ocultamos el modal
 if (
     modal &&
-    sessionStorage.setItem('aventuraIniciada', 'si');
+    sessionStorage.getItem('aventuraIniciada') === 'si'
 ) {
     modal.style.display = 'none';
 }
 
 
-// Restaurar la sección donde estaba
+// Restaurar la sección del itinerario
 window.addEventListener('load', () => {
 
     const seccion =
@@ -77,7 +68,7 @@ window.addEventListener('load', () => {
 });
 
 
-// Reproducir música
+// Guardar la posición de la música
 if (musica) {
 
     const tiempo =
@@ -101,29 +92,23 @@ if (musica) {
 }
 
 
-// Botón "Comenzar la aventura"
+// Botón de comenzar
 if (musica && modal && boton) {
 
-    boton.addEventListener(
-        'click',
-        () => {
+    boton.addEventListener('click', () => {
 
-            localStorage.setItem(
-                'aventuraIniciada',
-                'si'
+        sessionStorage.setItem(
+            'aventuraIniciada',
+            'si'
+        );
+
+        modal.style.display = 'none';
+
+        musica.play().catch(err => {
+            console.log(
+                'No se pudo reproducir la música:',
+                err
             );
-
-            modal.style.display =
-                'none';
-
-            musica.play().catch(
-                err => {
-                    console.log(
-                        'No se pudo reproducir la música:',
-                        err
-                    );
-                }
-            );
-        }
-    );
+        });
+    });
 }
