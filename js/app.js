@@ -17,14 +17,16 @@ function actualizarContador() {
 }
 
 actualizarContador();
+
 const musica = document.getElementById('musica');
+const modal = document.getElementById('bienvenida');
+const boton = document.getElementById('btnComenzar');
 
-function iniciarMusica() {
-    musica.play().catch(() => {});
-
-    document.removeEventListener('click', iniciarMusica);
-    document.removeEventListener('touchstart', iniciarMusica);
+if (musica && modal && boton) {
+    boton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        musica.play().catch(err => {
+            console.log('No se pudo reproducir la música:', err);
+        });
+    });
 }
-
-document.addEventListener('click', iniciarMusica);
-document.addEventListener('touchstart', iniciarMusica);
