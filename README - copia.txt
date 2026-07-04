@@ -1,1 +1,0 @@
-Pon tus fotos en la carpeta images y abre index.html
