@@ -44,7 +44,7 @@
 <a href="#imp">⭐ Imprescindibles</a>
 </nav>
 <main id="itinerario">
-<section class="card">
+<section id="lunes" class="card">
 <h2>📅 Lunes</h2>
 <div class="grid">
 <div><h3>🚗 Ida</h3><p>Salida de Sevilla temprano en coche. Llegada al alojamiento en Ayamonte.</p>
@@ -60,7 +60,8 @@
 <a class="btn"
    href="tavira.html"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   onclick="localStorage.setItem('seccion','lunes');">
    👀 Qué ver ↗️
 </a>
 </div>
@@ -71,14 +72,15 @@
 </div>
 </section>
 
-<section class="card">
+<section id="martes" class="card">
 <h2>📅 Martes</h2>
 <div class="grid">
 <div><h3>🌄 Mañana</h3><p>Visita al imponente Castillo de Silves: fortaleza medieval de piedra rojiza. Se puede caminar por todas sus murallas con vistas increíbles del pueblo.</p>
 <a class="btn"
    href="silves.html"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   onclick="localStorage.setItem('seccion','martes');">
    👀 Qué ver ↗️
 </a>
 </div>
@@ -92,7 +94,8 @@
 <a class="btn"
    href="carvoeiro.html"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   onclick="localStorage.setItem('seccion','martes');">
    👀 Qué ver ↗️
 </a>
 </div>
@@ -102,16 +105,18 @@
 </div>
 </section>
 
-<section class="card">
+<section id="miercoles" class="card">
 <h2>📅 Miércoles</h2>
 <div class="grid">
 <div><h3>🌅 Mañana</h3><p>Faro, Arco da Vila, Vila Adentro, Capilla de los Huesos y Marina.</p>
 <a class="btn"
    href="faro.html"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   onclick="localStorage.setItem('seccion','miercoles');">
    👀 Qué ver ↗️
-</a></div>
+</a>
+</div>
 <div><h3>🍽️ Almuerzo</h3><p>Bell'Antonio – pizzas artesanales.</p>
 <p><a class='btn' href='https://www.google.com/maps'>📍 Descubrir</a></p></div>
 <div><h3>🌅 Tarde</h3></div>
@@ -121,7 +126,7 @@
 </div>
 </section>
 
-<section class="card">
+<section id="jueves" class="card">
 <h2>📅 Jueves</h2>
 <div class="grid">
 <div><h3>🌄 Mañana</h3><p>Lagos, Ponta da Piedade, Praia do Camilo, Sagres y Cabo de San Vicente.</p></div>
@@ -134,7 +139,7 @@
 </div>
 </section>
 
-<section class="card">
+<section id="viernes" class="card">
 <h2>📅 Viernes</h2>
 <div class="grid">
 <div><h3>🌄 Mañana</h3><p>Isla Canela y preparar el regreso a Sevilla.</p></div>
