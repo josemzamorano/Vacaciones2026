@@ -44,7 +44,7 @@ const boton =
 // Ocultar el modal si ya empezó la aventura
 if (
     modal &&
-    localStorage.getItem('aventuraIniciada') === 'si'
+    sessionStorage.setItem('aventuraIniciada', 'si');
 ) {
     modal.style.display = 'none';
 }
@@ -69,6 +69,8 @@ window.addEventListener('load', () => {
                     block: 'start'
                 });
             }
+
+            localStorage.removeItem('seccion');
 
         }, 200);
     }
