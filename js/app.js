@@ -17,3 +17,14 @@ function actualizarContador() {
 }
 
 actualizarContador();
+const musica = document.getElementById('musica');
+
+function iniciarMusica() {
+    musica.play().catch(() => {});
+
+    document.removeEventListener('click', iniciarMusica);
+    document.removeEventListener('touchstart', iniciarMusica);
+}
+
+document.addEventListener('click', iniciarMusica);
+document.addEventListener('touchstart', iniciarMusica);
