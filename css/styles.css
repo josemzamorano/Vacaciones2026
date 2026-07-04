@@ -1,48 +1,285 @@
+/* ---------- General ---------- */
 
-body{margin:0;font-family:system-ui;background:#eef4fa;color:#17324d}
-.hero {
-  background:
-    linear-gradient(
-      rgba(11,78,162,0.45),
-      rgba(44,123,229,0.45)
-    ),
-    url("../images/portada.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 45vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.menu{display:flex;justify-content:center;gap:20px;padding:15px;background:#fff;position:sticky;top:0}
-.menu a{text-decoration:none;color:#0b4ea2;font-weight:700}
-.card{max-width:1000px;margin:20px auto;padding:20px;background:#fff;border-radius:18px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.btn{display:inline-block;padding:10px 14px;background:#0b4ea2;color:#fff;border-radius:10px;text-decoration:none}
-.dark{background:#122033;color:#e8eef7}
-.dark .card,.dark .menu{background:#1b2c44;color:#e8eef7}
-.countdown {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-top: 20px;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f8fc;
+    color: #17324d;
+    line-height: 1.6;
+}
+
+/* ---------- Ventana bienvenida ---------- */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(11,78,162,0.70), rgba(44,123,229,0.70)),
+        url("../images/portada.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 550px;
+    padding: 40px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.20);
+
     color: white;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.30);
+
+    animation: aparecer .8s ease;
 }
-.hero h1 {
-    font-size: 4rem;      /* Tamaño */
-    color: #000000;       /* Color */
-    margin-bottom: 15px;
-    font-weight: 700;     /* Negrita */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.subtitulo {
-    font-size: 2.4rem;
-    color: #f0080f;
+
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.modal-content p {
     margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#btnComenzar {
+    background: white;
+    color: #0b4ea2;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all .3s;
+}
+
+#btnComenzar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.30);
+}
+
+/* ---------- Portada ---------- */
+
+.hero {
+    background:
+        linear-gradient(rgba(11,78,162,0.45),
+        rgba(44,123,229,0.45)),
+        url("../images/portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: inline-block;
+
+    background: rgba(0,0,0,0.25);
+
+    padding: 12px 24px;
+    border-radius: 40px;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    color: #ffd166;
+}
+
+/* ---------- Menú ---------- */
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    padding: 18px;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.10);
+}
+
+.menu a {
+    text-decoration: none;
+    color: #0b4ea2;
+    font-weight: 600;
+}
+
+/* ---------- Contenido ---------- */
+
+main {
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ---------- Tarjetas ---------- */
+
+.card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #0b4ea2;
+    margin-bottom: 30px;
+}
+
+/* ---------- Grid ---------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 25px;
+}
+
+.grid > div {
+    background: #f7fbff;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    border: 1px solid #e4edf7;
+}
+
+.grid h3 {
+    color: #0b4ea2;
+    margin-bottom: 15px;
+}
+
+.grid p {
+    margin-bottom: 15px;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+    display: inline-block;
+
+    background: #0b4ea2;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #083a7d;
+    transform: translateY(-2px);
+}
+
+/* ---------- Lista final ---------- */
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* ---------- Móvil ---------- */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+    }
+
+    .countdown {
+        font-size: 1.05rem;
+    }
+
+    .menu {
+        gap: 18px;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
 }
