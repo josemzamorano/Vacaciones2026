@@ -1,18 +1,43 @@
 <!doctype html>
-<html lang="es"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vacaciones en Ayamonte y el Algarve</title>
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header class="hero">
-<h1>🏖️ Vacaciones en Ayamonte y el Algarve</h1>
-<p class="subtitulo">👨‍👧‍👧 Un Calvo y dos Bobines</p>
-<p id="contador" class="countdown"></p>
-</header>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vacaciones en Ayamonte y el Algarve</title>
 
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Ventana de bienvenida -->
+    <div id="bienvenida" class="modal">
+        <div class="modal-content">
+            <h2>🏖️ Vacaciones en Ayamonte y el Algarve</h2>
+
+            <p>👨‍👧‍👧 Un Calvo y dos Bobines están a punto de comenzar una nueva aventura.</p>
+
+            <p>
+                🌊 Playas, castillos, pizzas, hamburguesas y atardeceres os esperan.
+            </p>
+
+            <p>
+                ✨ Todo está preparado. Solo queda empezar el viaje.
+            </p>
+
+            <button id="btnComenzar">
+                🚀 Comenzar la aventura
+            </button>
+        </div>
+    </div>
+
+    <!-- Cabecera -->
+    <header class="hero">
+        <h1>🏖️ Vacaciones en Ayamonte y el Algarve</h1>
+        <p class="subtitulo">👨‍👧‍👧 Un Calvo y dos Bobines</p>
+        <p id="contador" class="countdown"></p>
+    </header>
 <nav class="menu">
 <a href="#">🏠 Inicio</a>
 <a href="#itinerario">📅 Itinerario</a>
@@ -51,8 +76,9 @@
 <p>Qué pedir: "Frango com piri-piri" (Pollo asado al carbón portugués).</p>
 <p><a class='btn' href='https://www.google.com/maps/search/?api=1&query=Churrasqueira+Valdemar+Silves'>📍 Descubrir</a></p>
 </div>
-<div><h3>🌅 Tarde</h3><p>Paisaje costero en el precioso pueblo marinero de Carvoeiro.<p></p>Pasarelas de madera de Algar Seco con cuevas y ventanas de roca natural.</p><p>Boneca: Es la cueva con la famosa "ventana" al mar.</p>
-<a class="btn" href="carvoeiro.html">📸 Qué ver</a></div>
+<div><h3>🌅 Tarde</h3><p>Paisaje costero en el precioso pueblo marinero de Carvoeiro.</p>
+<p>Pasarelas de madera de Algar Seco con cuevas y ventanas de roca natural.</p>
+<p>Boneca: Es la cueva con la famosa "ventana" al mar.</p><a class="btn" href="carvoeiro.html">📸 Qué ver</a></div>
 <div><h3>🍴 Cena</h3><p>Vía Trajano Burgers.</p>
 <p>Qué pedir: Smash Burger clásica o BBQ, patatas con queso y bacon y fingers de pollo para compartir. </p>
 <p><a class='btn' href='https://www.google.com/maps/search/?api=1&query=Via+Trajano+Burgers+Ayamonte'>📍 Descubrir</a></p>
@@ -111,4 +137,5 @@
     <source src="vacas.mp3" type="audio/mpeg">
 </audio>
 <script src="js/app.js"></script>
-</body></html>
+</body>
+</html>
