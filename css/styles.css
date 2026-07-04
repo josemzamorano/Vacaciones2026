@@ -1,0 +1,48 @@
+
+body{margin:0;font-family:system-ui;background:#eef4fa;color:#17324d}
+.hero {
+  background:
+    linear-gradient(
+      rgba(11,78,162,0.45),
+      rgba(44,123,229,0.45)
+    ),
+    url("../images/portada.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 45vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+.menu{display:flex;justify-content:center;gap:20px;padding:15px;background:#fff;position:sticky;top:0}
+.menu a{text-decoration:none;color:#0b4ea2;font-weight:700}
+.card{max-width:1000px;margin:20px auto;padding:20px;background:#fff;border-radius:18px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.btn{display:inline-block;padding:10px 14px;background:#0b4ea2;color:#fff;border-radius:10px;text-decoration:none}
+.dark{background:#122033;color:#e8eef7}
+.dark .card,.dark .menu{background:#1b2c44;color:#e8eef7}
+.countdown {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: white;
+}
+.hero h1 {
+    font-size: 4rem;      /* Tamaño */
+    color: #000000;       /* Color */
+    margin-bottom: 15px;
+    font-weight: 700;     /* Negrita */
+}
+.subtitulo {
+    font-size: 2.4rem;
+    color: #f0080f;
+    margin-bottom: 20px;
+}
