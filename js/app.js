@@ -5,7 +5,7 @@ function actualizarContador() {
         return;
     }
 
-    const fechaViaje = new Date('2026-07-26T00:00:00');
+    const fechaViaje = new Date('2026-07-27T00:00:00');
     const ahora = new Date();
 
     const diferencia = fechaViaje - ahora;
